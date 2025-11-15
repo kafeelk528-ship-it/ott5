@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Home — TechSellPro Demo{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-left">
+    <h1>Sell OTT subscriptions with a professional storefront</h1>
+    <p class="lead">Instant checkout, secure payments (Stripe test keys), and clean admin-ready structure — perfect for your minor project demo.</p>
+    <div class="cta">
+      <a class="btn primary" href="{{ url_for('show_plans') }}">Browse Plans</a>
+      <a class="btn outline" href="{{ url_for('show_plans') }}">Quick Demo</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="{{ url_for('static', filename='hero-illustration.png') }}" alt="OTT illustration" class="hero-img">
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <h4>Clean UI</h4>
+    <p>Professional layout inspired by modern SaaS storefronts.</p>
+  </div>
+  <div class="feature">
+    <h4>Payments</h4>
+    <p>Stripe test-mode ready — show checkout in class without real money.</p>
+  </div>
+  <div class="feature">
+    <h4>Responsive</h4>
+    <p>Works well on mobile and desktop for live demos.</p>
+  </div>
+</section>
+{% endblock %}

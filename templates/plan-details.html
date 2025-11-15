@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ plan.name }} — TechSellPro Demo{% endblock %}
+{% block content %}
+<div class="plan-detail">
+  <div class="left">
+    <h2>{{ plan.name }}</h2>
+    <p class="price-large">₹{{ plan.price }}</p>
+    <p class="muted">Duration: 30 days (demo)</p>
+    <p>Secure checkout with Stripe test mode. Use the test card <code>4242 4242 4242 4242</code> in demo mode.</p>
+    <div class="cta">
+      <a class="btn primary" href="{{ url_for('create_checkout_session', id=plan.id) }}">Buy Now</a>
+      <a class="btn outline" href="{{ url_for('show_plans') }}">Back</a>
+    </div>
+  </div>
+
+  <aside class="right">
+    <div class="box">
+      <h4>What's included</h4>
+      <ul>
+        <li>Instant demo confirmation</li>
+        <li>One month validity</li>
+        <li>Support: Demo only</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+{% endblock %}

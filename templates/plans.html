@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Plans — TechSellPro Demo{% endblock %}
+{% block content %}
+<h2 class="section-title">Available Plans</h2>
+<div class="plans-grid">
+  {% for p in plans %}
+  <article class="card plan-card">
+    <div class="card-head">
+      <div class="card-title">{{ p.name }}</div>
+      <div class="card-price">₹{{ p.price }}</div>
+    </div>
+    <p class="small muted">30 days validity • Demo delivery</p>
+    <p class="card-desc">A fast, simple subscription delivered after payment (demo).</p>
+    <div class="card-actions">
+      <a class="btn small outline" href="{{ url_for('plan_details', id=p.id) }}">Details</a>
+      <a class="btn small primary" href="{{ url_for('create_checkout_session', id=p.id) }}">Buy ₹{{ p.price }}</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Payment Success — TechSellPro Demo{% endblock %}
+{% block content %}
+<div class="success">
+  <h2>Payment Received (Demo)</h2>
+  <p class="muted">Thank you — this is a confirmation page for the demo project.</p>
+  <div class="cta">
+    <a class="btn primary" href="{{ url_for('show_plans') }}">Back to Plans</a>
+    <a class="btn outline" href="{{ url_for('home') }}">Home</a>
+  </div>
+</div>
+{% endblock %}
